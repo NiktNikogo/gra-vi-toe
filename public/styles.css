@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@200&display=swap');
+body {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 20px;
+    font-family: 'Source Code Pro';
+}
+.MainMenu {
+    display: block;
+    text-align: center;
+    border: 6px solid crimson; 
+    margin-left: 30%;
+    margin-right: 30%;
+}
+.MainMenu button{
+    background-color: darkred;
+    border: none;
+    color: white;
+    padding:  15px 32px;
+    text-align: center;
+    font-size: 13px;
+}
+.PlayGrid {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    padding: 10px;
+}
+.GridItem {
+    padding: 20px;
+    font-size: 20;
+    text-align: center;
+    width: auto;
+    height: auto;
+}
+#mainCanvas{
+    outline: black 3px solid;
+    position: fixed;
+}
+.pic-container {
+    width: 400px;
+    height: 500px;
+    overflow-y: scroll;
+    overflow-x:hidden;
+}

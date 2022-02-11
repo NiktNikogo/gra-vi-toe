@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<head>
+    <title><%= `Room #${id}`%></title>
+    <link rel='stylesheet' href="/styles.css">
+</head>
+
+<body>
+    <canvas id='mainCanvas'></canvas>
+    <div id = 'pastTurnsList' class = "pic-container">
+    </div> 
+    <h1 id= "MainText">
+    </h1>
+    <h2 id = "playerCount">
+        PlayerCount: 0
+    </h2>
+    <h2 id = "turnCounter">
+        currentTurn: -1
+    </h2>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.137.5/build/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.137.5/examples/js/controls/OrbitControls.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src='/roomMain.js'></script>
+</body>
