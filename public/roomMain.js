@@ -1,5 +1,6 @@
 
 document.getElementById('MainText').textContent += window.location;
+const canvas = document.getElementById('mainCanvas');
 let myTurn = -1;
 let turn = 0;
 let overallTrun = 0;
@@ -216,9 +217,8 @@ function onLeftClick() {
     } 
 }
 function onMouseMove(event) {
-    const x = (event.clientX / renderer.domElement.clientWidth) * 2 - 1;
-    const y = -(event.clientY / renderer.domElement.clientHeight) * 2 + 1;
-    
+    const x = ((event.clientX - canvas.offsetLeft) / renderer.domElement.clientWidth) * 2 - 1;
+    const y = -((event.clientY - canvas.offsetTop)/ renderer.domElement.clientHeight) * 2 + 1;
     raycaster.setFromCamera({x: x, y: y}, camera);
     const intersects = raycaster.intersectObjects( scene.children, false );
     for (let i = 0; i < intersects.length; i++) {
@@ -277,12 +277,12 @@ function animate() {
 const delta = 3;
 let startX;
 let startY;
-window.addEventListener('mousedown', function (event) {
+renderer.domElement.addEventListener('mousedown', function (event) {
   startX = event.pageX;
   startY = event.pageY;
 });
 
-window.addEventListener('mouseup', function (event) {
+renderer.domElement.addEventListener('mouseup', function (event) {
   const diffX = Math.abs(event.pageX - startX);
   const diffY = Math.abs(event.pageY - startY);
 
@@ -291,7 +291,7 @@ window.addEventListener('mouseup', function (event) {
   }
 });
 
-window.addEventListener( 'mousemove', onMouseMove );
+renderer.domElement.addEventListener( 'mousemove', onMouseMove );
 
 animate();
 
