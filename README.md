@@ -6,6 +6,6 @@ npm install package.json
 ``` 
 After that all the dependencies will be installed, then type
 ```
-nodemon
+node index.js
 ```
 and then click the link that will show up in the console.
